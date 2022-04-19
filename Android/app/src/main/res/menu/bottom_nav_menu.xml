@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/workout_tab"
+        android:icon="@drawable/ic_dumbell"
+        android:title="@string/workout_tab_title"
+        />
+    <item
+        android:id="@+id/exercises_tab"
+        android:icon="@drawable/ic_writing"
+        android:title="@string/exercises_tab_title"
+        />
+    <item
+        android:id="@+id/workout_data_tab"
+        android:icon="@drawable/ic_folder"
+        android:title="@string/exercises_tab_title"
+        />
+    <item
+        android:id="@+id/routines_tab"
+        android:icon="@drawable/ic_routine"
+        android:title="@string/routine_tab_title"
+        />
+</menu>
