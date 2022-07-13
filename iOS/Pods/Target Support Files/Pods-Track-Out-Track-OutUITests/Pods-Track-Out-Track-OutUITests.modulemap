@@ -1,0 +1,6 @@
+module Pods_Track_Out_Track_OutUITests {
+  umbrella header "Pods-Track-Out-Track-OutUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

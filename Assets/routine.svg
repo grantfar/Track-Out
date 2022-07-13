@@ -7,7 +7,7 @@
    viewBox="0 0 512 512"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   inkscape:version="1.1.2 (b8e25be8, 2022-02-05)"
    sodipodi:docname="routine.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,14 +24,14 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="0.99804688"
-     inkscape:cx="5.5107632"
-     inkscape:cy="138.27006"
-     inkscape:window-width="1366"
-     inkscape:window-height="697"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:cx="-61.620352"
+     inkscape:cy="291.56947"
+     inkscape:window-width="1680"
+     inkscape:window-height="912"
+     inkscape:window-x="-1"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1-2" />
   <defs
      id="defs2" />
   <g
@@ -67,13 +67,11 @@
        inkscape:label="Ebene 1"
        transform="matrix(0.66999618,0,0,0.66999618,18.593016,-77.476124)"
        style="fill:#ffffff;fill-opacity:0">
-      <circle
+      <path
          id="path3755"
-         style="fill:#ffffff;fill-rule:evenodd;stroke:#2c3a4e;stroke-width:26;fill-opacity:0"
+         style="fill-rule:evenodd;stroke:#2c3a4e;stroke-width:26"
          transform="translate(151.14,55.143)"
-         r="265.71429"
-         cy="426.64789"
-         cx="200" />
+         d="M 465.71429,426.64789 A 265.71429,265.71429 0 0 1 200,692.36218 265.71429,265.71429 0 0 1 -65.714294,426.64789 265.71429,265.71429 0 0 1 200,160.93359 265.71429,265.71429 0 0 1 465.71429,426.64789 Z" />
       <path
          id="path3757"
          style="fill:#ffffff;stroke:#2c3a4e;stroke-width:23;stroke-miterlimit:0;fill-opacity:0"
