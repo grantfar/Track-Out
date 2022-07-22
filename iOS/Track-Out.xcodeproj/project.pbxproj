@@ -23,6 +23,8 @@
 		1193DEFA281A3625003B41F8 /* Track_OutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1193DEF9281A3625003B41F8 /* Track_OutUITests.swift */; };
 		1193DEFC281A3625003B41F8 /* Track_OutUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1193DEFB281A3625003B41F8 /* Track_OutUITestsLaunchTests.swift */; };
 		1193DF09282214D5003B41F8 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1193DF08282214D5003B41F8 /* WorkoutView.swift */; };
+		11E1DF6C2889F83A00BD350B /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1DF6B2889F83A00BD350B /* DayView.swift */; };
+		11E1DF6E288A06D400BD350B /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E1DF6D288A06D400BD350B /* Day.swift */; };
 		16135914D690222BE786166E /* libPods-Track-OutTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36767CCE2E7E5E10D06C014A /* libPods-Track-OutTests.a */; };
 		774412EF053A989747A7D496 /* libPods-Track-Out.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45CCE3C217F9D8F6CC7FDB23 /* libPods-Track-Out.a */; };
 		A539D846D264AB62C3C81FF2 /* libPods-Track-Out-Track-OutUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18ACD8DAEABD5C0964AEF633 /* libPods-Track-Out-Track-OutUITests.a */; };
@@ -66,6 +68,8 @@
 		1193DEF9281A3625003B41F8 /* Track_OutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track_OutUITests.swift; sourceTree = "<group>"; };
 		1193DEFB281A3625003B41F8 /* Track_OutUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track_OutUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1193DF08282214D5003B41F8 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		11E1DF6B2889F83A00BD350B /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		11E1DF6D288A06D400BD350B /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		18ACD8DAEABD5C0964AEF633 /* libPods-Track-Out-Track-OutUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Track-Out-Track-OutUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36767CCE2E7E5E10D06C014A /* libPods-Track-OutTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Track-OutTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45CCE3C217F9D8F6CC7FDB23 /* libPods-Track-Out.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Track-Out.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +124,7 @@
 				110C0D412845AF49006361AF /* Routine.swift */,
 				110C0D432845B2A2006361AF /* Exercise.swift */,
 				110FC69E2855A74A009555C3 /* Workout.swift */,
+				11E1DF6D288A06D400BD350B /* Day.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 				110C0D47284E750E006361AF /* RoutineDetailView.swift */,
 				110C0D49284E954F006361AF /* RoutineEditView.swift */,
 				110FC69C2855A701009555C3 /* ExcersiceView.swift */,
+				11E1DF6B2889F83A00BD350B /* DayView.swift */,
 			);
 			path = "Track-Out";
 			sourceTree = "<group>";
@@ -405,10 +411,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				110C0D4628494B88006361AF /* RoutineCardView.swift in Sources */,
+				11E1DF6C2889F83A00BD350B /* DayView.swift in Sources */,
 				110C0D422845AF49006361AF /* Routine.swift in Sources */,
 				1193DF09282214D5003B41F8 /* WorkoutView.swift in Sources */,
 				110C0D4A284E954F006361AF /* RoutineEditView.swift in Sources */,
 				110C0D3F28459417006361AF /* RoutineView.swift in Sources */,
+				11E1DF6E288A06D400BD350B /* Day.swift in Sources */,
 				1193DEE1281A3623003B41F8 /* ContentView.swift in Sources */,
 				110FC69F2855A74A009555C3 /* Workout.swift in Sources */,
 				1193DEDF281A3623003B41F8 /* Track_OutApp.swift in Sources */,

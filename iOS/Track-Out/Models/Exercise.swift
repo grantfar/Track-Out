@@ -6,7 +6,11 @@
 //
 
 import Foundation
-class Exercise: Identifiable{
+class Exercise: Identifiable, NSCopying{
+    func copy(with zone: NSZone? = nil) -> Any {
+        return Exercise(id: id, name: name, cType: cType)
+    }
+    
     enum countType{
         case reps
         case time

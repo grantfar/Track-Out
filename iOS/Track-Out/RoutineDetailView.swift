@@ -9,7 +9,6 @@ import SwiftUI
 
 struct RoutineDetailView: View {
     @Binding var routine:Routine
-    @State var showingEdit:Bool = false
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
 
@@ -17,7 +16,7 @@ struct RoutineDetailView: View {
                 Section(header:Text("Day " + String(index + 1)).font(.title).frame(maxWidth: .infinity).padding(6).background(Color.secondary).cornerRadius(4).foregroundColor(.white)){
                     Spacer()
                     VStack(alignment: .leading){
-                        ForEach(day){ exercise in
+                        ForEach(Array(day.enumerated()), id: \.offset){index,exercise in
                             Text(exercise.name).frame(maxWidth:.infinity, alignment: .leading) .padding(Edge.Set.horizontal, 30)
                         }
                     }
@@ -26,26 +25,7 @@ struct RoutineDetailView: View {
             }
         }.frame(maxWidth:.infinity).padding(Edge.Set.horizontal,4).navigationTitle(routine.name).toolbar {
             ToolbarItem(placement: .primaryAction){
-                Button(action:{showingEdit = true}){Text("Edit")}
-            }
-        }.sheet(isPresented: $showingEdit){
-            NavigationView{
-                RoutineEditView().toolbar {
-                    ToolbarItem(placement: .confirmationAction){
-                        Button(action: {
-                            showingEdit = false
-                        }){
-                            Text("Save")
-                        }
-                    }
-                    ToolbarItem(placement: .cancellationAction){
-                        Button(action: {
-                            showingEdit = false
-                        }){
-                            Text("Cancel")
-                        }
-                    }
-                }
+                NavigationLink(destination: RoutineEditView(EditRoutine: $routine)){Text("Edit")}
             }
         }
     }
