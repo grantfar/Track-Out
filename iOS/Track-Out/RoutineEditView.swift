@@ -9,40 +9,37 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct SectionDD : DropDelegate{
+    
+    
     func performDrop(info: DropInfo) -> Bool {
         return true
     }
     
+    func dropUpdated(info: DropInfo) -> DropProposal? {
+        return DropProposal(operation: .move)
+    }
+    
     func dropEntered(info: DropInfo) {
         if dropIndex != startIndex{
-            withAnimation(.default){
-                excercises.move(fromOffsets: IndexSet(integer: startIndex), toOffset: dropIndex > startIndex ? dropIndex + 1 : dropIndex)
-                
-                // should be fast because there shouldn't be a large ammount of days and this is bug proof
-                for i in excercises.indices{
-                    excercises[i].index = i
-                }
-            }
+                routine.MoveDay(originalIndex: startIndex, destinationIndex: dropIndex)
         }
     }
     
     let dropIndex:Int
     let startIndex: Int
-    @Binding var excercises : [Day]
+    @ObservedObject var routine : Routine
     
 }
 
 struct RoutineEditView: View {
-    @Environment(\.dismiss) private var dismiss
-    @Binding var EditRoutine:Routine
     @State var draggedSection:Int
-    @State var routine:Routine
-    
-    
+    @ObservedObject var routine:Routine
+    @State var edit:Int
+    @State var showSheet:Bool = false
     init(EditRoutine:Binding<Routine>) {
-        self._EditRoutine = EditRoutine
+        _edit = State(initialValue: 0)
         self._draggedSection = State(initialValue: 0)
-        self._routine = State(initialValue: EditRoutine.wrappedValue.copy() as! Routine)
+        self._routine = ObservedObject(wrappedValue: EditRoutine.wrappedValue)
     }
     
     var body: some View {
@@ -53,27 +50,26 @@ struct RoutineEditView: View {
                     "Routine Name",
                     text:$routine.name
                 ).padding(4)
-                ForEach(routine.exercises){ day in
-                    DayView(dayNum: day.index, exercises: day).onDrop(of: [UTType.text], delegate: SectionDD(dropIndex: day.index, startIndex: draggedSection, excercises: $routine.exercises))
+                
+                ForEach(routine.exercises, id:\.id){ day in
+                    DayView(dayNum: day.index + 1, exercises: day, edit: $edit, showSheet: $showSheet).onDrop(of: [UTType.text], delegate: SectionDD(dropIndex: day.index, startIndex: draggedSection, routine: routine))
                         .onDrag({self.draggedSection = day.index
-                        return NSItemProvider(item: nil, typeIdentifier: "Section")
-                    })
+                            return NSItemProvider(item: nil, typeIdentifier: "Section")
+                        })
                     Spacer()
+                }.sheet(isPresented: $showSheet) {
+                    DayEditView(day: routine.exercises[edit])
                 }
+                    
             }.textFieldStyle(.roundedBorder)
-        }.toolbar{
-            ToolbarItem(placement:.confirmationAction){
-                Button(action: {
-                    EditRoutine = routine
-                    dismiss()
-                }, label: {Text("Save")})
-            }
         }
     }
+    
 }
 
-struct RoutineEditView_Previews: PreviewProvider {
-    static var previews: some View {
-        RoutineEditView(EditRoutine:.constant(Routine.sampleData[0]))
-    }
-}
+//struct RoutineEditView_Previews: PreviewProvider {
+//
+//    static var previews: some View {
+//        RoutineEditView(EditRoutine:.constant(Routine.sampleData[0]),dismissAction: nil)
+//    }
+//}

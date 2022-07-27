@@ -25,6 +25,8 @@ struct WorkoutView: View {
     
     
     @Binding var Routines:[Routine]
+    @Binding var ActiveRoutine:Routine
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -36,7 +38,7 @@ struct WorkoutView: View {
                     Text("Resume Workout")
                 }.buttonStyle(SecondaryButton())
                 
-                NavigationLink(destination:RoutineView(ExistingRoutines:$Routines)){
+                NavigationLink(destination:RoutineView(ExistingRoutines:$Routines, ActiveRoutine: $ActiveRoutine)){
                     Text("Change/Edit Regiments")
                 }.buttonStyle(SecondaryButton())
                 
@@ -55,6 +57,6 @@ struct WorkoutView: View {
 
 struct WorkoutView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutView(Routines: .constant(Routine.sampleData))
+        WorkoutView(Routines: .constant(Routine.sampleData), ActiveRoutine: .constant(Routine.sampleData[0]))
     }
 }

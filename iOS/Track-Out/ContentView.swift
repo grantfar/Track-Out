@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     @Binding var ExistingRoutines: [Routine]
+    @Binding var ActiveRoutine:Routine
     var body: some View {
         TabView{
-            WorkoutView(Routines: $ExistingRoutines).tabItem{
+            WorkoutView(Routines: $ExistingRoutines, ActiveRoutine: $ActiveRoutine).tabItem{
                 Label("Workout", image: "custom.dumbell")
             }
             Text("History").tabItem{
@@ -23,6 +24,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(ExistingRoutines: .constant(Routine.sampleData))
+        ContentView(ExistingRoutines: .constant(Routine.sampleData), ActiveRoutine: .constant(Routine.sampleData[0]))
     }
 }

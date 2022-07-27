@@ -6,7 +6,15 @@
 //
 
 import Foundation
-class Exercise: Identifiable, NSCopying{
+class Exercise: Identifiable, NSCopying, Hashable, Equatable{
+    static func == (lhs: Exercise, rhs: Exercise) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
     func copy(with zone: NSZone? = nil) -> Any {
         return Exercise(id: id, name: name, cType: cType)
     }

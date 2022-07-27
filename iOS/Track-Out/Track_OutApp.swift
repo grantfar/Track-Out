@@ -10,9 +10,10 @@ import SwiftUI
 @main
 struct Track_OutApp: App {
     @State var ExistingRoutines: [Routine] = Routine.sampleData
+    @State var ActiveRoutine:Routine = Routine.sampleData[0]
     var body: some Scene {
         WindowGroup {
-            ContentView(ExistingRoutines: $ExistingRoutines)
+            ContentView(ExistingRoutines: $ExistingRoutines, ActiveRoutine: $ActiveRoutine)
         }
     }
 }

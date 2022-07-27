@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Day: Identifiable,NSCopying{
+class Day: Identifiable,NSCopying,ObservableObject{
     
     init(exercises:[Exercise], index:Int){
         self.exercises = exercises
@@ -19,7 +19,7 @@ class Day: Identifiable,NSCopying{
     }
     
     let id:UUID = UUID()
-    var exercises:[Exercise]
-    var index:Int
+    @Published var exercises:[Exercise]
+    @Published var index:Int
     
 }
