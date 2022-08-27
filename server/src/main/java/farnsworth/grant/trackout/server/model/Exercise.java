@@ -2,7 +2,7 @@ package farnsworth.grant.trackout.server.model;
 
 import java.util.UUID;
 
-public class exercise {
+public class Exercise {
     UUID id;
     String name;
     ExerciseType exerciseType;
