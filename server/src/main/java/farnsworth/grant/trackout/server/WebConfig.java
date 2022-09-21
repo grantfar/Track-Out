@@ -20,4 +20,9 @@ public class WebConfig {
         .hasAuthority("admin"));
         return http.build();
     }
+
+    @Bean
+    public UserDetailsService userDetailsService(){
+        
+    }
 }
