@@ -13,7 +13,7 @@ import javax.persistence.ManyToMany;
 
 
 @Entity
-public class User {
+public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -24,7 +24,15 @@ public class User {
     @JoinTable(
         name = "User_Groups",
         joinColumns = @JoinColumn(name ="UserID"),
-        inverseJoinColumns = @JoinColumn(name = "")
+        inverseJoinColumns = @JoinColumn(name = "GroupID")
     )
-    private Set<Group> Groups;
+    private Set<Group> groups;
+
+    public Long getId(){return id;}
+    public String GetUserName(){return username;}
+    public String GetPassword(){return password;}
+    public Set<Group> GetGroups(){return groups;}
+    public void SetUserName(String userName){this.username = userName;}
+    public void SetPassword(String password){this.password = password;}
+    public void SetGroups(Set<Group> groups){this.groups = groups;}
 }
